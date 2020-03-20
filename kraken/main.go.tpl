@@ -103,6 +103,12 @@ func main() {
 		}
 	}
 
+	{ // Enable the websocket by default
+		if _, e := self.SetValue("/Services/websocket/State", reflect.ValueOf(cpb.ServiceInstance_RUN)); e != nil {
+			log.Logf(lib.LLERROR, "couldn't set value /Services/websocket/State -> %+v: %v", reflect.ValueOf(cpb.ServiceInstance_RUN), e)
+		}
+	}
+
 	{ // Populate interface0 information based on IP
 		netIP := net.ParseIP(*ip)
 		if netIP == nil {

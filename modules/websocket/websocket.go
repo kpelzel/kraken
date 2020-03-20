@@ -1,13 +1,13 @@
-/* restapi.go: this module provides a simple ReST API for Kraken
+/* websocket.go: this module provides a websocket to listen to kraken events
  *
- * Author: J. Lowell Wofford <lowell@lanl.gov>
+ * Author: Kevin Pelzel <kpelzel@lanl.gov>
  *
  * This software is open source software available under the BSD-3 license.
  * Copyright (c) 2018, Triad National Security, LLC
  * See LICENSE file for details.
  */
 
-//go:generate protoc -I ../../core/proto/include -I proto --go_out=plugins=grpc:proto proto/restapi.proto
+//go:generate protoc -I ../../core/proto/include -I proto --go_out=plugins=grpc:proto proto/websocket.proto
 
 package websocket
 
